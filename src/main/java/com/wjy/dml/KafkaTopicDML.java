@@ -36,8 +36,8 @@ public class KafkaTopicDML {
         }
 
         //删除
-//        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic03", "topic04"));
-//        deleteTopicsResult.all().get();//同步删除
+        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic03"));
+        deleteTopicsResult.all().get();//同步删除
 
         //查看Topic详细信息
         DescribeTopicsResult describeTopicsResult = adminClient.describeTopics(Arrays.asList("topic01"));

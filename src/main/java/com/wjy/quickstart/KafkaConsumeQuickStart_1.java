@@ -47,8 +47,7 @@ public class KafkaConsumeQuickStart_1 {
                     String key = record.key();
                     String value = record.value();
                     long timestamp = record.timestamp();
-                    System.out.println(topic + "\t" + partition + "\t" + offset);
-                    System.out.println(key + "\t" + value + "\t" + timestamp);
+                    System.out.println(topic + "\t" + partition + "\t" + offset + "\t" + key + "\t" + value + "\t" + timestamp);
                 }
             }
         }
