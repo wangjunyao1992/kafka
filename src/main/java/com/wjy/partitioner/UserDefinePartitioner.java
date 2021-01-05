@@ -25,6 +25,7 @@ public class UserDefinePartitioner implements Partitioner {
      */
     @Override
     public int partition(String s, Object o, byte[] bytes, Object o1, byte[] bytes1, Cluster cluster) {
+        //这里根据需要把消息分配到不同的分区中去
         return 0;
     }
 

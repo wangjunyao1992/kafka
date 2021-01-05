@@ -9,6 +9,8 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 /**
+ * kafka 增删改查
+ *
  * 必须将 wangjunyao100.com:9092,wangjunyao101.com:9092,wangjunyao102.com:9092
  * 这三个主机的IP和主机名映射配置在操作系统中  hosts
  * @author wangjunyao
@@ -25,19 +27,19 @@ public class KafkaTopicDML {
         KafkaAdminClient adminClient = (KafkaAdminClient) KafkaAdminClient.create(props);
 
         //创建Topic   异步创建
-//        CreateTopicsResult createTopicsResult = adminClient.createTopics(Arrays.asList(new NewTopic("topic03", 3, (short) 3)));
-//        createTopicsResult.all().get();//同步创建
+        CreateTopicsResult createTopicsResult = adminClient.createTopics(Arrays.asList(new NewTopic("topic02", 3, (short) 3)));
+        createTopicsResult.all().get();//同步创建
 
         //查看Topic列表
-        ListTopicsResult listTopics = adminClient.listTopics();
-        Set<String> topicNames = listTopics.names().get();
-        for (String topicName : topicNames) {
-            System.out.println(topicName);
-        }
+//        ListTopicsResult listTopics = adminClient.listTopics();
+//        Set<String> topicNames = listTopics.names().get();
+//        for (String topicName : topicNames) {
+//            System.out.println(topicName);
+//        }
 
         //删除
-        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic03"));
-        deleteTopicsResult.all().get();//同步删除
+//        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic01"));
+//        deleteTopicsResult.all().get();//同步删除
 
         //查看Topic详细信息
         DescribeTopicsResult describeTopicsResult = adminClient.describeTopics(Arrays.asList("topic01"));
