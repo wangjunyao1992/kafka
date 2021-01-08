@@ -27,7 +27,7 @@ public class KafkaTopicDML {
         KafkaAdminClient adminClient = (KafkaAdminClient) KafkaAdminClient.create(props);
 
         //创建Topic   异步创建
-        CreateTopicsResult createTopicsResult = adminClient.createTopics(Arrays.asList(new NewTopic("topic02", 3, (short) 3)));
+        CreateTopicsResult createTopicsResult = adminClient.createTopics(Arrays.asList(new NewTopic("topic01", 3, (short) 3)));
         createTopicsResult.all().get();//同步创建
 
         //查看Topic列表
@@ -38,7 +38,7 @@ public class KafkaTopicDML {
 //        }
 
         //删除
-//        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic01"));
+//        DeleteTopicsResult deleteTopicsResult = adminClient.deleteTopics(Arrays.asList("topic01", "topic02"));
 //        deleteTopicsResult.all().get();//同步删除
 
         //查看Topic详细信息
